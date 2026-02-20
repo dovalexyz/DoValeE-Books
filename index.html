@@ -3,354 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoVale E-Books | A Livraria do Futuro</title>
+    <title>DoVale E-Books</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/android-chrome-512x512.png" type="image/png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 </head>
 <body>
-
     <div class="screen-border" id="screen-border"></div>
     <canvas id="particles-canvas"></canvas>
-
+    
     <header>
         <div class="logo-container">
-            <div class="logo">DoVale E-Books</div>
-            <div class="subtitle">A Livraria do Futuro</div>
+            <h1 class="logo">DoVale E-Books</h1>
+            <p class="subtitle">LIVROS DIGITAIS</p>
         </div>
-
-        <div class="menu-btn" id="menu-btn">
-            <span></span><span></span><span></span>
+        <div id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-
-        <nav class="nav-links" id="sidebar">
+        <nav id="sidebar" class="nav-links">
             <a href="#inicio">Início</a>
-            <a href="#diferenciais">Vantagens</a>
+            <a href="#diferenciais">Diferenciais</a>
             <a href="#catalogo">Catálogo</a>
-            <a href="#planos">Planos VIP</a>
+            <a href="#planos">Planos</a>
         </nav>
     </header>
-
+    
     <div class="container" id="inicio">
+        <!-- Hero -->
+        <section class="hero home-only">
+            <h1>DoVale <span>E-Books</span></h1>
+            <p>Aqui eu te ofereço meus e-books em formato digital, prontos para serem lidos em qualquer dispositivo.</p>
+            <a href="#catalogo" class="btn-glow">Explorar Catálogo</a>
+        </section>
         
-        <div class="home-only">
-            <section class="hero">
-                <h1>Sua Leitura Elevada ao <br><span>Nível Máximo</span></h1>
-                <p>A DoVale E-Books oferece a melhor experiência em leitura digital. Trabalhamos com segurança, rapidez, qualidade premium e o maior acervo do mercado.</p>
-                <a href="#catalogo" class="btn-glow">Explorar Catálogo</a>
-            </section>
-
-            <section class="benefits-section" id="diferenciais">
-                <h2 class="section-title">Por que escolher a DoVale?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <span class="benefit-icon">🔒</span>
-                        <h3>Acesso Seguro 100%</h3>
-                        <p>Sua compra é protegida e o envio do e-book é imediato. Sem burocracia, sem complicação.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <span class="benefit-icon">⚡</span>
-                        <h3>Multiplataforma</h3>
-                        <p>Nossos arquivos rodam perfeitamente em Celulares, Tablets, Kindles e PCs. Leia onde quiser.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <span class="benefit-icon">💎</span>
-                        <h3>Qualidade Premium</h3>
-                        <p>Textos revisados, formatação impecável e alta resolução. A melhor experiência visual.</p>
-                    </div>
+        <!-- Benefícios -->
+        <section id="diferenciais" class="benefits-section home-only">
+            <h2 class="section-title">Meus Diferenciais</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔒</span>
+                    <h3>Segurança Total</h3>
+                    <p>Você compra pela Play Store, totalmente seguro e confiável.</p>
                 </div>
-            </section>
-        </div>
-
-        <section class="catalog-section" id="catalogo">
-            <h2 class="section-title home-only">Catálogo de Produtos</h2>
-            
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Pesquisar títulos, autores ou tags (Ex: romance, espaço)...">
-                <span class="search-icon">🔍</span>
-            </div>
-
-            <div id="screen-categories" class="screen active">
-                <div class="categories-grid">
-                    
-                    <div class="cat-bubble" style="--cat-color: #ff007f;" data-target="romance" data-catname="Romance" data-c1="#ff007f" data-c2="#ff80bf" data-particle="❤️">
-                        <div class="cat-icon">❤️</div><span class="cat-name">Romance</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #ff0000;" data-target="terror" data-catname="Terror" data-c1="#ff0000" data-c2="#ff4d4d" data-particle="💀">
-                        <div class="cat-icon">💀</div><span class="cat-name">Terror</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #00ffff;" data-target="scifi" data-catname="Ficção Científica" data-c1="#00ffff" data-c2="#0080ff" data-particle="🚀">
-                        <div class="cat-icon">🚀</div><span class="cat-name">Ficção Científica</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #8a2be2;" data-target="fantasia" data-catname="Fantasia" data-c1="#8a2be2" data-c2="#d8b4fe" data-particle="✨">
-                        <div class="cat-icon">🔮</div><span class="cat-name">Fantasia</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #48d1cc;" data-target="scifi-fantasia" data-catname="Ficção C. e Fantasia" data-c1="#48d1cc" data-c2="#8a2be2" data-particle="🌌">
-                        <div class="cat-icon">🌌</div><span class="cat-name">Ficção C. & Fant.</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #ffaa00;" data-target="artes" data-catname="Artes" data-c1="#ffaa00" data-c2="#ffd480" data-particle="🎨">
-                        <div class="cat-icon">🎨</div><span class="cat-name">Artes</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #32cd32;" data-target="autoajuda" data-catname="Autoajuda" data-c1="#32cd32" data-c2="#98fb98" data-particle="🌱">
-                        <div class="cat-icon">🌱</div><span class="cat-name">Autoajuda</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #d2b48c;" data-target="biografias" data-catname="Biografias e Memórias" data-c1="#d2b48c" data-c2="#f5deb3" data-particle="📖">
-                        <div class="cat-icon">📖</div><span class="cat-name">Biografias</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #4169e1;" data-target="educacao" data-catname="Educação" data-c1="#4169e1" data-c2="#87cefa" data-particle="🎓">
-                        <div class="cat-icon">🎓</div><span class="cat-name">Educação</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #b0c4de;" data-target="ficcao" data-catname="Ficção e Literatura" data-c1="#b0c4de" data-c2="#e6e6fa" data-particle="📚">
-                        <div class="cat-icon">📚</div><span class="cat-name">Ficção e Lit.</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #800000;" data-target="gastronomia" data-catname="Gastronomia e Vinhos" data-c1="#800000" data-c2="#ff6347" data-particle="🍷">
-                        <div class="cat-icon">🍷</div><span class="cat-name">Gastronomia</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #cd853f;" data-target="historia" data-catname="História" data-c1="#cd853f" data-c2="#deb887" data-particle="🏛️">
-                        <div class="cat-icon">🏛️</div><span class="cat-name">História</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #ffcc00;" data-target="humor" data-catname="Humor" data-c1="#ffcc00" data-c2="#ffff66" data-particle="😂">
-                        <div class="cat-icon">😂</div><span class="cat-name">Humor</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #ff69b4;" data-target="infantil" data-catname="Livros Infantis" data-c1="#ff69b4" data-c2="#ffb6c1" data-particle="🧸">
-                        <div class="cat-icon">🧸</div><span class="cat-name">Infantil</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #4b0082;" data-target="misterio" data-catname="Mistério e Suspense" data-c1="#4b0082" data-c2="#9370db" data-particle="🕵️">
-                        <div class="cat-icon">🕵️</div><span class="cat-name">Mistério</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #2e8b57;" data-target="negocios" data-catname="Negócios e Investimentos" data-c1="#2e8b57" data-c2="#3cb371" data-particle="💼">
-                        <div class="cat-icon">💼</div><span class="cat-name">Negócios</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #dda0dd;" data-target="poesia" data-catname="Poesia" data-c1="#dda0dd" data-c2="#ee82ee" data-particle="✒️">
-                        <div class="cat-icon">✒️</div><span class="cat-name">Poesia</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #ff1493;" data-target="psicologia" data-catname="Psicologia" data-c1="#ff1493" data-c2="#ff69b4" data-particle="🧠">
-                        <div class="cat-icon">🧠</div><span class="cat-name">Psicologia</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #f0e68c;" data-target="religiao" data-catname="Religião e Espiritualidade" data-c1="#f0e68c" data-c2="#fffacd" data-particle="🕊️">
-                        <div class="cat-icon">🕊️</div><span class="cat-name">Espiritualidade</span>
-                    </div>
-                    <div class="cat-bubble" style="--cat-color: #20b2aa;" data-target="saude" data-catname="Saúde - Mente e Corpo" data-c1="#20b2aa" data-c2="#48d1cc" data-particle="🧘">
-                        <div class="cat-icon">🧘</div><span class="cat-name">Saúde</span>
-                    </div>
-
+                <div class="benefit-card">
+                    <span class="benefit-icon">💰</span>
+                    <h3>Preços Acessíveis</h3>
+                    <p>Ofereço preços competitivos e acessíveis para todos os meus e-books.</p>
                 </div>
-            </div>
-
-            <div id="screen-books" class="screen">
-                <button class="back-btn" id="back-btn">⬅ Voltar às Categorias</button>
-                <h3 class="section-title" id="category-title" style="font-size: 2rem;">Lançamentos</h3>
-                
-                <div class="books-grid" id="books-list">
-                    
-                    <div class="book-card" data-category="romance" data-tags="romance, amor, casal, drama" data-title="Amor nas Estrelas" data-desc="Um romance proibido e apaixonante entre dois viajantes do tempo." data-oldprice="R$ 45,00" data-newprice="R$ 29,90" data-discount="-33%" data-f1="EPUB Otimizado" data-f2="Leitura Offline" data-f3="Sem DRM" data-f4="Qualidade HD" data-cover="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Romance</span>
-                        <h2 class="book-title">Amor nas Estrelas</h2>
-                    </div>
-
-                    <div class="book-card" data-category="terror" data-tags="terror, medo, assombração, suspense" data-title="A Casa das Sombras" data-desc="Presos em uma mansão amaldiçoada onde as paredes sussurram pesadelos." data-oldprice="R$ 55,00" data-newprice="R$ 34,90" data-discount="-36%" data-f1="Formato Dark Mode" data-f2="Compatível Kindle" data-f3="Acesso Vitalício" data-f4="Alta Tensão" data-cover="https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Terror</span>
-                        <h2 class="book-title">A Casa das Sombras</h2>
-                    </div>
-
-                    <div class="book-card" data-category="scifi" data-tags="ficção científica, sci-fi, espaço, alien" data-title="A Odisseia Quântica" data-desc="Descubra os mistérios do universo e anomalias temporais nesta obra." data-oldprice="R$ 89,90" data-newprice="R$ 49,90" data-discount="-44%" data-f1="Formatos: PDF/EPUB" data-f2="Edição Ilustrada" data-f3="Páginas Extras" data-f4="Garantia Vitalícia" data-cover="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Ficção Científica</span>
-                        <h2 class="book-title">A Odisseia Quântica</h2>
-                    </div>
-
-                    <div class="book-card" data-category="fantasia" data-title="Reinos de Cristal" data-tags="fantasia, magia, dragões, medieval" data-desc="Magia ancestral, espadas místicas e dragões nesta aventura épica." data-oldprice="R$ 75,00" data-newprice="R$ 50,00" data-discount="-33%" data-f1="Mapa Inédito 4K" data-f2="Livro 1 da Trilogia" data-f3="Leitura Offline" data-f4="EPUB Original" data-cover="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Fantasia</span>
-                        <h2 class="book-title">Reinos de Cristal</h2>
-                    </div>
-
-                    <div class="book-card" data-category="scifi-fantasia" data-tags="ficção, fantasia, espaço, magia" data-title="Galáxia Arcana" data-desc="Quando feitiços colidem com naves estelares num futuro sombrio." data-oldprice="R$ 60,00" data-newprice="R$ 40,00" data-discount="-33%" data-f1="Crossover Épico" data-f2="PDF Interativo" data-f3="Leitura Offline" data-f4="Acesso Imediato" data-cover="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Sci-Fi & Fantasia</span>
-                        <h2 class="book-title">Galáxia Arcana</h2>
-                    </div>
-
-                    <div class="book-card" data-category="artes" data-tags="artes, pintura, história, visual" data-title="A História da Arte" data-desc="Uma jornada visual pelas maiores obras primas da humanidade." data-oldprice="R$ 120,00" data-newprice="R$ 89,90" data-discount="-25%" data-f1="Imagens em Alta Resolução" data-f2="PDF Otimizado" data-f3="Guia de Cores" data-f4="100% Completo" data-cover="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Artes</span>
-                        <h2 class="book-title">A História da Arte</h2>
-                    </div>
-
-                    <div class="book-card" data-category="autoajuda" data-tags="autoajuda, mente, sucesso, hábitos" data-title="O Poder do Hábito" data-desc="Reprograme sua mente para o sucesso absoluto e mude sua vida." data-oldprice="R$ 60,00" data-newprice="R$ 39,90" data-discount="-33%" data-f1="Exercícios Práticos" data-f2="Livro de Trabalho em PDF" data-f3="Versão EPUB" data-f4="Acesso Vitalício" data-cover="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Autoajuda</span>
-                        <h2 class="book-title">O Poder do Hábito</h2>
-                    </div>
-
-                    <div class="book-card" data-category="biografias" data-title="Mentes Brilhantes" data-tags="biografia, história real, pessoas" data-desc="A história real por trás dos maiores inventores do século XXI." data-oldprice="R$ 55,00" data-newprice="R$ 45,00" data-discount="-18%" data-f1="Fotos Inéditas" data-f2="Compatível com Celular" data-f3="Sem Limite de Telas" data-f4="Qualidade Premium" data-cover="https://images.unsplash.com/photo-1455390582262-044cdead27d8?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead27d8?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Biografias</span>
-                        <h2 class="book-title">Mentes Brilhantes</h2>
-                    </div>
-
-                    <div class="book-card" data-category="educacao" data-title="Pedagogia Moderna" data-tags="educação, ensino, escola, pedagogia" data-desc="Novos métodos de ensino para o século atual. Inove na sala de aula." data-oldprice="R$ 49,90" data-newprice="R$ 39,90" data-discount="-20%" data-f1="Focado em E-learning" data-f2="Material de Apoio" data-f3="PDF Liberado" data-f4="Leitura Fácil" data-cover="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Educação</span>
-                        <h2 class="book-title">Pedagogia Moderna</h2>
-                    </div>
-
-                    <div class="book-card" data-category="ficcao" data-tags="ficção, literatura, drama, romance" data-title="O Som do Silêncio" data-desc="Um drama envolvente sobre perda e reencontros literários." data-oldprice="R$ 65,00" data-newprice="R$ 49,90" data-discount="-23%" data-f1="Bestseller Internacional" data-f2="Edição Revisada" data-f3="EPUB/MOBI" data-f4="Acesso Imediato" data-cover="https://images.unsplash.com/photo-1474932430478-367dbb6832c1?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1474932430478-367dbb6832c1?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Ficção Literária</span>
-                        <h2 class="book-title">O Som do Silêncio</h2>
-                    </div>
-
-                    <div class="book-card" data-category="gastronomia" data-title="Sabores do Mundo" data-tags="gastronomia, receitas, comida, vinho" data-desc="Receitas exclusivas e harmonização de vinhos de todos os continentes." data-oldprice="R$ 80,00" data-newprice="R$ 59,90" data-discount="-25%" data-f1="+500 Receitas" data-f2="Guia de Vinhos PDF" data-f3="Fotos em 4K" data-f4="Acesso Vitalício" data-cover="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Gastronomia</span>
-                        <h2 class="book-title">Sabores do Mundo</h2>
-                    </div>
-
-                    <div class="book-card" data-category="historia" data-title="O Império Perdido" data-tags="historia, antigo, civilização, mundo" data-desc="Uma análise profunda das civilizações que o tempo esqueceu." data-oldprice="R$ 70,00" data-newprice="R$ 49,90" data-discount="-28%" data-f1="Pesquisa Arqueológica" data-f2="Mapas Ilustrados" data-f3="EPUB Otimizado" data-f4="100% Digital" data-cover="https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">História</span>
-                        <h2 class="book-title">O Império Perdido</h2>
-                    </div>
-
-                    <div class="book-card" data-category="humor" data-title="Rindo do Caos" data-tags="humor, comédia, rir, engraçado" data-desc="Crônicas engraçadas sobre o desespero de ser adulto hoje." data-oldprice="R$ 35,00" data-newprice="R$ 25,00" data-discount="-28%" data-f1="Comédia Pura" data-f2="Leitura Rápida" data-f3="PDF Compatível" data-f4="Sem DRM" data-cover="https://images.unsplash.com/photo-1545696563-0c46b5a34ec8?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1545696563-0c46b5a34ec8?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Humor</span>
-                        <h2 class="book-title">Rindo do Caos</h2>
-                    </div>
-
-                    <div class="book-card" data-category="infantil" data-title="O Ursinho Mágico" data-tags="infantil, crianças, dormir, contos" data-desc="Uma história linda e educativa para ler antes de dormir." data-oldprice="R$ 40,00" data-newprice="R$ 29,90" data-discount="-25%" data-f1="Desenhos Grandes" data-f2="Fonte Adaptada" data-f3="PDF Interativo" data-f4="Baixe na Hora" data-cover="https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Infantil</span>
-                        <h2 class="book-title">O Ursinho Mágico</h2>
-                    </div>
-
-                    <div class="book-card" data-category="misterio" data-title="O Enigma do Relógio" data-tags="mistério, suspense, crime, policial" data-desc="Um detetive corre contra o tempo para resolver um crime impossível." data-oldprice="R$ 55,00" data-newprice="R$ 39,90" data-discount="-27%" data-f1="Trama Intrigante" data-f2="Bônus: Conto Extra" data-f3="Formatos Variados" data-f4="Acesso Vitalício" data-cover="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Mistério</span>
-                        <h2 class="book-title">O Enigma do Relógio</h2>
-                    </div>
-
-                    <div class="book-card" data-category="negocios" data-title="Investidor de Sucesso" data-tags="negócios, dinheiro, financeiro, investir" data-desc="Como multiplicar seu patrimônio de forma inteligente no digital." data-oldprice="R$ 90,00" data-newprice="R$ 69,90" data-discount="-22%" data-f1="Planilha de Ganhos" data-f2="Análise Gráfica" data-f3="PDF + EPUB" data-f4="Garantia 7 Dias" data-cover="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Negócios</span>
-                        <h2 class="book-title">Investidor de Sucesso</h2>
-                    </div>
-
-                    <div class="book-card" data-category="poesia" data-title="Versos da Alma" data-tags="poesia, versos, poemas, literatura" data-desc="Uma coletânea de poemas que tocam fundo no coração de quem lê." data-oldprice="R$ 30,00" data-newprice="R$ 19,90" data-discount="-33%" data-f1="Formato Delicado" data-f2="Leitura Offline" data-f3="EPUB/MOBI" data-f4="Acesso Imediato" data-cover="https://images.unsplash.com/photo-1473186505569-9c61870c11f9?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1473186505569-9c61870c11f9?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Poesia</span>
-                        <h2 class="book-title">Versos da Alma</h2>
-                    </div>
-
-                    <div class="book-card" data-category="psicologia" data-title="A Mente Inconsciente" data-tags="psicologia, mente, cérebro, humano" data-desc="Desvendando os segredos de como nosso cérebro toma decisões." data-oldprice="R$ 65,00" data-newprice="R$ 49,90" data-discount="-23%" data-f1="Estudos Científicos" data-f2="PDF Otimizado" data-f3="Acesso Vitalício" data-f4="Qualidade Premium" data-cover="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Psicologia</span>
-                        <h2 class="book-title">A Mente Inconsciente</h2>
-                    </div>
-
-                    <div class="book-card" data-category="religiao" data-title="Paz Interior" data-tags="religião, espiritualidade, Deus, fé" data-desc="Meditações diárias para encontrar clareza espiritual e foco." data-oldprice="R$ 45,00" data-newprice="R$ 35,00" data-discount="-22%" data-f1="Guia Prático Diário" data-f2="Formato EPUB" data-f3="Compatível Kindle" data-f4="Sem DRM" data-cover="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Espiritualidade</span>
-                        <h2 class="book-title">Paz Interior</h2>
-                    </div>
-
-                    <div class="book-card" data-category="saude" data-title="Corpo em Movimento" data-tags="saúde, dieta, corpo, mente, fit" data-desc="Guias práticos para uma vida mais saudável e cheia de energia." data-oldprice="R$ 50,00" data-newprice="R$ 39,90" data-discount="-20%" data-f1="Tabelas de Exercício" data-f2="PDF Interativo" data-f3="Acesso Vitalício" data-f4="Alta Qualidade" data-cover="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop" class="book-cover">
-                        <span class="card-tag">Saúde</span>
-                        <h2 class="book-title">Corpo em Movimento</h2>
-                    </div>
-
+                <div class="benefit-card">
+                    <span class="benefit-icon">📱</span>
+                    <h3>Formatos Otimizados</h3>
+                    <p>E-books em formatos otimizados para telas retina e modo noturno.</p>
                 </div>
             </div>
         </section>
-
-        <div class="home-only">
-            <section class="plans-section" id="planos">
-                <h2 class="section-title">Assinaturas Premium</h2>
-                <div class="plans-grid">
-                    <div class="plan-card">
-                        <h3 class="plan-name">Plano Leitor</h3>
-                        <div class="plan-price">R$ 19,90<span style="font-size: 1rem; color: #888;">/mês</span></div>
-                        <ul class="plan-features">
-                            <li class="yes">Acesso a 5 livros por mês</li>
-                            <li class="yes">Formatos PDF e EPUB</li>
-                            <li class="yes">Suporte Padrão</li>
-                            <li class="no">Lançamentos Antecipados</li>
-                            <li class="no">Acesso Vitalício aos arquivos</li>
-                        </ul>
-                        <button class="btn-plan">Assinar Leitor</button>
+        
+        <!-- Catálogo -->
+        <section id="catalogo" class="catalog-section">
+            <h2 class="section-title home-only">Catálogo</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Pesquise livros...">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <div id="screen-categories" class="screen active">
+                <div class="categories-grid">
+                    <div class="cat-bubble" style="--cat-color: #ff007f;" data-target="romance" data-catname="Romance" data-c1="#ff007f" data-c2="#ff69b4" data-particle="❤️">
+                        <span class="cat-icon">❤️</span>
+                        <span class="cat-name">Romance</span>
                     </div>
-
-                    <div class="plan-card" style="border-color: var(--primary-glow); transform: scale(1.05);">
-                        <div class="plan-badge">MAIS VENDIDO</div>
-                        <h3 class="plan-name">Plano Plus</h3>
-                        <div class="plan-price">R$ 29,90<span style="font-size: 1rem; color: #888;">/mês</span></div>
-                        <ul class="plan-features">
-                            <li class="yes">Acesso a 15 livros por mês</li>
-                            <li class="yes">Todos os formatos disponíveis</li>
-                            <li class="yes">Lançamentos Antecipados</li>
-                            <li class="yes">Acesso ao acervo Clássico</li>
-                            <li class="no">Arquivos Extras / Bônus</li>
-                        </ul>
-                        <button class="btn-plan" style="background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));">Assinar Plus</button>
+                    <div class="cat-bubble" style="--cat-color: #ff0000;" data-target="terror" data-catname="Terror" data-c1="#ff0000" data-c2="#8b0000" data-particle="💀">
+                        <span class="cat-icon">💀</span>
+                        <span class="cat-name">Terror</span>
                     </div>
-
-                    <div class="plan-card">
-                        <h3 class="plan-name">Plano Infinito</h3>
-                        <div class="plan-price">R$ 49,90<span style="font-size: 1rem; color: #888;">/mês</span></div>
-                        <ul class="plan-features">
-                            <li class="yes">Acesso ILIMITADO a tudo</li>
-                            <li class="yes">Arquivos Extras e Áudiobooks</li>
-                            <li class="yes">Lançamentos Antecipados</li>
-                            <li class="yes">Suporte VIP Prioritário</li>
-                            <li class="yes">Fica com os arquivos para sempre</li>
-                        </ul>
-                        <button class="btn-plan">Assinar Infinito</button>
+                    <div class="cat-bubble" style="--cat-color: #00ffff;" data-target="ficcao-cientifica" data-catname="Ficção Científica" data-c1="#00ffff" data-c2="#00bfff" data-particle="🚀">
+                        <span class="cat-icon">🚀</span>
+                        <span class="cat-name">Ficção Científica</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #8a2be2;" data-target="fantasia" data-catname="Fantasia" data-c1="#8a2be2" data-c2="#4b0082" data-particle="🔮">
+                        <span class="cat-icon">🔮</span>
+                        <span class="cat-name">Fantasia</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ffd700;" data-target="misterio" data-catname="Mistério" data-c1="#ffd700" data-c2="#b8860b" data-particle="🕵️">
+                        <span class="cat-icon">🕵️</span>
+                        <span class="cat-name">Mistério</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #808080;" data-target="historia" data-catname="História" data-c1="#808080" data-c2="#696969" data-particle="📜">
+                        <span class="cat-icon">📜</span>
+                        <span class="cat-name">História</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ff8c00;" data-target="biografia" data-catname="Biografia" data-c1="#ff8c00" data-c2="#ff4500" data-particle="👤">
+                        <span class="cat-icon">👤</span>
+                        <span class="cat-name">Biografia</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #32cd32;" data-target="autoajuda" data-catname="Autoajuda" data-c1="#32cd32" data-c2="#228b22" data-particle="🌟">
+                        <span class="cat-icon">🌟</span>
+                        <span class="cat-name">Autoajuda</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ffc0cb;" data-target="poesia" data-catname="Poesia" data-c1="#ffc0cb" data-c2="#db7093" data-particle="📖">
+                        <span class="cat-icon">📖</span>
+                        <span class="cat-name">Poesia</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ff1493;" data-target="drama" data-catname="Drama" data-c1="#ff1493" data-c2="#c71585" data-particle="🎭">
+                        <span class="cat-icon">🎭</span>
+                        <span class="cat-name">Drama</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ff0000;" data-target="acao" data-catname="Ação" data-c1="#ff0000" data-c2="#dc143c" data-particle="💥">
+                        <span class="cat-icon">💥</span>
+                        <span class="cat-name">Ação</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ffff00;" data-target="comedia" data-catname="Comédia" data-c1="#ffff00" data-c2="#ffd700" data-particle="😂">
+                        <span class="cat-icon">😂</span>
+                        <span class="cat-name">Comédia</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #4b0082;" data-target="suspense" data-catname="Suspense" data-c1="#4b0082" data-c2="#483d8b" data-particle="😱">
+                        <span class="cat-icon">😱</span>
+                        <span class="cat-name">Suspense</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #87ceeb;" data-target="infantil" data-catname="Infantil" data-c1="#87ceeb" data-c2="#00bfff" data-particle="🧸">
+                        <span class="cat-icon">🧸</span>
+                        <span class="cat-name">Infantil</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ff69b4;" data-target="juvenil" data-catname="Juvenil" data-c1="#ff69b4" data-c2="#ff1493" data-particle="📚">
+                        <span class="cat-icon">📚</span>
+                        <span class="cat-name">Juvenil</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #d2b48c;" data-target="classicos" data-catname="Clássicos" data-c1="#d2b48c" data-c2="#cd853f" data-particle="🏛️">
+                        <span class="cat-icon">🏛️</span>
+                        <span class="cat-name">Clássicos</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #20b2aa;" data-target="ficcao" data-catname="Ficção" data-c1="#20b2aa" data-c2="#008b8b" data-particle="📖">
+                        <span class="cat-icon">📖</span>
+                        <span class="cat-name">Ficção</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #a9a9a9;" data-target="nao-ficcao" data-catname="Não-Ficção" data-c1="#a9a9a9" data-c2="#808080" data-particle="📘">
+                        <span class="cat-icon">📘</span>
+                        <span class="cat-name">Não-Ficção</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #228b22;" data-target="educacional" data-catname="Educacional" data-c1="#228b22" data-c2="#006400" data-particle="🎓">
+                        <span class="cat-icon">🎓</span>
+                        <span class="cat-name">Educacional</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ff6347;" data-target="culinaria" data-catname="Culinária" data-c1="#ff6347" data-c2="#ff4500" data-particle="🍳">
+                        <span class="cat-icon">🍳</span>
+                        <span class="cat-name">Culinária</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #ff4500;" data-target="aventura" data-catname="Aventura" data-c1="#ff4500" data-c2="#ff8c00" data-particle="⚔️">
+                        <span class="cat-icon">🗺️</span>
+                        <span class="cat-name">Aventura</span>
+                    </div>
+                    <div class="cat-bubble" style="--cat-color: #00bfff;" data-target="tecnologia" data-catname="Tecnologia" data-c1="#00bfff" data-c2="#20b2aa" data-particle="⚙️">
+                        <span class="cat-icon">💻</span>
+                        <span class="cat-name">Tecnologia</span>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+            
+            <div id="screen-books" class="screen">
+                <button id="back-btn">← Voltar</button>
+                <h3 id="category-title">Categoria</h3>
+                <div id="books-list" class="books-grid">
+                    <!-- Livro 1 -->
+                    <div class="book-card" 
+                         data-category="romance" 
+                         data-tags="romance, amor, drama" 
+                         data-title="Depois do Último Cinza" 
+                         data-desc="Depois do Último Cinza é um romance contemporâneo profundo sobre duas almas feridas que encontram, um no outro, a peça que faltava para restaurar seus próprios destinos." 
+                         data-oldprice="R$14,90" 
+                         data-newprice="R$1,00" 
+                         data-discount="-93,3%" 
+                         data-f1="Formato EPUB" 
+                         data-f2="24 páginas" 
+                         data-f3="Autor: DoVale" 
+                         data-f4="Lançamento: 18/02/2026" 
+                         data-cover="assets/capas/DepoisDoUltimoCinza.jpeg"
+                         data-buy-link="https://play.google.com/store/books/details/DoVale_Depois_do_%C3%9Altimo_Cinza?id=nNzBEQAAQBAJ">
+                        <img class="book-cover" src="assets/capas/DepoisDoUltimoCinza.jpeg" alt="Depois do Último Cinza">
+                        <span class="card-tag">Romance, Amor, Drama</span>
+                        <h2 class="book-title">Depois do Último Cinza</h2>
+                    </div>
+
+                    <!-- Adicione quantos livros quiser aqui seguindo o mesmo padrão -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Planos -->
+        <section id="planos" class="plans-section home-only">
+            <h2 class="section-title">Escolha Seu Plano</h2>
+            <h3 class="section-title">(INDISPONÍVEL)</h3>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3 class="plan-name">Leitor</h3>
+                    <span class="plan-price">R$0,0/mês</span>
+                    <ul class="plan-features">
+                        <li class="yes">.</li>
+                        <li class="yes">.</li>
+                        <li class="no">.</li>
+                        <li class="no">.</li>
+                    </ul>
+                    <button class="btn-plan">Assinar</button>
+                </div>
+                <div class="plan-card" style="transform: scale(1.05);">
+                    <span class="plan-badge">INDISPONÍVEL</span>
+                    <h3 class="plan-name">Plus</h3>
+                    <span class="plan-price">R$0,0/mês</span>
+                    <ul class="plan-features">
+                        <li class="yes">.</li>
+                        <li class="yes">.</li>
+                        <li class="yes">.</li>
+                        <li class="no">.</li>
+                    </ul>
+                    <button class="btn-plan">Assinar</button>
+                </div>
+                <div class="plan-card">
+                    <h3 class="plan-name">Infinito</h3>
+                    <span class="plan-price">R$0,0/mês</span>
+                    <ul class="plan-features">
+                        <li class="yes">.</li>
+                        <li class="yes">.</li>
+                        <li class="yes">.</li>
+                        <li class="yes">.</li>
+                    </ul>
+                    <button class="btn-plan">Assinar</button>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <div class="modal-overlay" id="book-modal">
+    
+    <!-- Modal -->
+    <div id="book-modal" class="modal-overlay">
         <div class="modal-content">
-            <button class="close-btn" id="close-modal">&times;</button>
-            <img src="" alt="Capa do Livro" class="modal-cover" id="modal-cover">
+            <button id="close-modal">×</button>
+            <img id="modal-cover" src="" alt="Capa do Livro">
             <div class="modal-details">
-                <h2 class="modal-title" id="modal-title">Título</h2>
-                <p class="modal-desc" id="modal-desc">Desc...</p>
-                
-                <ul class="modal-features" id="modal-features">
-                    <li id="f1">Formato EPUB e PDF</li>
-                    <li id="f2">Acesso Vitalício</li>
-                    <li id="f3">Qualidade Alta</li>
-                    <li id="f4">Leitura Offline</li>
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <ul class="modal-features">
+                    <li id="f1"></li>
+                    <li id="f2"></li>
+                    <li id="f3"></li>
+                    <li id="f4"></li>
                 </ul>
-
                 <div class="price-container">
-                    <div class="prices">
-                        <span class="old-price" id="modal-old-price">R$ 00,00</span>
-                        <span class="new-price" id="modal-new-price">R$ 00,00</span>
-                    </div>
-                    <span class="discount-badge" id="modal-discount">-0%</span>
+                    <span id="modal-old-price"></span>
+                    <span id="modal-new-price"></span>
+                    <span id="modal-discount"></span>
                 </div>
-                <button class="buy-btn">Adicionar ao Carrinho</button>
+                <a href="#" id="buy-btn" class="buy-btn" target="_blank">Comprar Agora</a>
             </div>
         </div>
     </div>
-
+    
     <footer>
-        <div class="footer-logo">DoVale E-Books</div>
+        <h1 class="footer-logo">DoVale E-Books</h1>
         <div class="social-links">
-            <a href="#">DC</a>
-            <a href="#">IG</a>
-            <a href="#">TT</a>
+            <a href="https://www.instagram.com/dovale.xyz" target="_blank">IG</a>
+            <a href="https://www.tiktok.com/@dovale.xyz" target="_blank">TTK</a>
         </div>
-        <p class="footer-text">© 2024 DoVale E-Books. Todos os direitos reservados.<br>A melhor livraria de produtos digitais.</p>
+        <p class="footer-text">© 2026 DoVale E-Books. Todos os direitos reservados.</p>
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
