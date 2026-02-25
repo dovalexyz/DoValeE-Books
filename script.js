@@ -19,6 +19,18 @@ const homeSections = document.querySelectorAll('.home-only');
 // Estado
 let activeCategoryContext = null;
 
+// Função para contar e atualizar livros por categoria
+function updateBookCounters() {
+    catBubbles.forEach(bubble => {
+        const categoryTarget = bubble.dataset.target;
+        const bookCount = Array.from(allBooks).filter(book => book.dataset.category === categoryTarget).length;
+        const counter = bubble.querySelector('.book-counter');
+        if (counter) {
+            counter.textContent = bookCount;
+        }
+    });
+}
+
 // Toggle Menu Mobile
 menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('active');
@@ -245,3 +257,4 @@ window.addEventListener('resize', initParticles);
 setGlobalTheme(defaultColor1, defaultColor2, 'circle', false);
 initParticles();
 drawParticles();
+updateBookCounters();
